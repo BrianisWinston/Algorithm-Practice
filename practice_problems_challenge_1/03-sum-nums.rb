@@ -4,7 +4,7 @@
 # Difficulty: easy.
 
 def sum_nums(num)
-  # (0..num).to_a.reduce {|x,y| x += y}
+  (0..num).to_a.inject(:+)
 end
 
 # These are tests to check that your code is working. After writing
