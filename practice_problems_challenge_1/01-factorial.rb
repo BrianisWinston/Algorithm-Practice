@@ -6,8 +6,9 @@
 # Difficulty: easy.
 
 def factorial(n)
-  # return 1 if n <= 1
-  # n * factorial(n - 1)
+  return 1 if n == 0
+  (1..n).to_a.inject { |ans, n| ans * n}
+  # (1..n).to_a.inject(:*)
 end
 
 # These are tests to check that your code is working. After writing
