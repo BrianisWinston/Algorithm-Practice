@@ -6,13 +6,13 @@
 # Difficulty: easy.
 
 def reverse(string)
-  # answer = ""
-  # letters = string.chars
-  # string.length.times do
-  #   popped = letters.pop
-  #   answer << popped
-  # end
-  # answer
+  idx = string.length - 1
+  answer = ""
+  while idx >= 0
+    answer << string[idx]
+    idx -= 1
+  end
+  answer
 end
 
 # These are tests to check that your code is working. After writing
