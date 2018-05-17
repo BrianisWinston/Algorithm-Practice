@@ -4,17 +4,21 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
-  # hour = 0
-  # min = minutes
-  # until min < 60
-  #   if min >= 60
-  #     hour += 1
-  #     min -= 60
-  #   end
-  # end
-  # min = "0#{min}" if min.to_s.length == 1
-  # p "#{hour}:#{min}"
+  seconds = 0
+  hours = 0
+  while minutes > 0
+    if minutes >= 60
+      hours += 1
+      minutes -= 60
+    else
+      seconds = minutes
+      minutes -= minutes
+    end
+  end
+
+  seconds < 10 ? "#{hours}:0#{seconds}" : "#{hours}:#{seconds}"
 end
+
 
 
 # These are tests to check that your code is working. After writing
