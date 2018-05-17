@@ -7,10 +7,15 @@
 # Difficulty: easy.
 
 def longest_word(sentence)
-  # answer = ""
-  # count = 0
-  # sentence.split.each {|word| answer = word if word.length > count}
-  # answer
+  longest = 0
+  answer = nil
+  sentence.split.each do |word|
+    if word.length > longest
+      answer = word
+      longest = word.length
+    end
+  end
+  answer
 end
 
 # These are tests to check that your code is working. After writing
