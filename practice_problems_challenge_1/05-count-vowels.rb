@@ -5,12 +5,8 @@
 # Difficulty: easy.
 
 def count_vowels(string)
-  # vowels = %w(a e i o u)
-  # count = 0
-  # string.chars.each do |letter|
-  #   count += 1 if vowels.include?(letter)
-  # end
-  # count
+  vowels = %w(a e i o u)
+  string.chars.count { |alph| vowels.include?(alph) }
 end
 
 # These are tests to check that your code is working. After writing
