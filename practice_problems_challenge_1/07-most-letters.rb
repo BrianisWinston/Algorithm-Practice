@@ -1,3 +1,4 @@
+require 'byebug'
 # Write a method that takes a string in and returns true if the letter
 # "z" appears within three letters **after** an "a". You may assume
 # that the string contains only lowercase letters.
@@ -5,16 +6,17 @@
 # Difficulty: medium.
 
 def nearby_az(string)
-  # string.chars.each_with_index do |let,idx|
-  #   if let == "a"
-  #     idx2 = idx + 1
-  #     while idx2 < string.length
-  #       return true if string[idx2] == "z"
-  #       idx2 += 1
-  #     end
-  #   end
-  # end
-  # false
+  # debugger
+  string.chars.each_with_index do |let, idx|
+    if let == "a"
+      idx2 = idx + 1
+      while idx2 <= string.length - 1 && idx2 <= idx + 3
+        return true if string[idx2] == "z"
+        idx2 += 1
+      end
+    end
+  end
+  false
 end
 
 # These are tests to check that your code is working. After writing

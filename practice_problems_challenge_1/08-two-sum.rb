@@ -5,14 +5,14 @@
 # Difficulty: medium.
 
 def two_sum(nums)
-  # nums.each_with_index do |num,idx|
-  #   idx2 = idx + 1
-  #   while idx2 < nums.length
-  #     return [idx,idx2] if num + nums[idx2] == 0
-  #     idx2 += 1
-  #   end
-  # end
-  # nil
+  nums.each_with_index do |el, idx|
+    idx2 = idx + 1
+    while idx2 < nums.length
+      return [idx, idx2] if el + nums[idx2] == 0
+      idx2 += 1
+    end
+  end
+  nil
 end
 
 # These are tests to check that your code is working. After writing

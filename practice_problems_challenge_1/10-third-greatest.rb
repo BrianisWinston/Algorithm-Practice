@@ -5,7 +5,7 @@
 # Difficulty: medium.
 
 def third_greatest(nums)
-  # p nums.sort[-3]
+  nums.sort[-3]
 end
 
 # These are tests to check that your code is working. After writing
