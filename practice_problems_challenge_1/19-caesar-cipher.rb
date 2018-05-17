@@ -24,23 +24,20 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
-  # answer = []
-  # holder = ""
-  # string.split.each do |word|
-  #   word.each_char do |letter|
-  #     holder << shifted(letter,offset)
-  #   end
-  #   answer << holder
-  #   holder = ""
-  # end
-  # answer.join(" ")
+  alpha = ('a'..'z').to_a
+  answer = ""
+  string.chars.map do |let|
+    if let == " "
+      answer << " "
+      next
+    end
+    new_id = (alpha.index(let) + offset) % 26
+    answer << alpha[new_id]
+  end
+  p answer
 end
 
-def shifted(let,off)
-  # alphabet = ("a".."z").to_a
-  # offed = (alphabet.index(let) + off) % 26
-  # alphabet[offed]
-end
+
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.

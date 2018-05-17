@@ -19,6 +19,18 @@ def dasherize_number(num)
   #   answer << num
   # end
   # answer
+  answer = ""
+  num.to_s.chars.each_with_index do |alph, idx|
+    new_num = alph.to_i
+    if idx == 0 && new_num % 2 != 0
+      answer << "#{new_num}-"
+    elsif new_num % 2 != 0 && answer.chars.last != "-"
+      answer << "-#{new_num}"
+    else
+      answer << "#{new_num}"
+    end
+  end
+  answer
 end
 
 # These are tests to check that your code is working. After writing

@@ -5,12 +5,13 @@
 # Difficulty: medium.
 
 def greatest_common_factor(number1, number2)
-  # idx = number1
-  # while idx >= 0
-  #   return idx if (number1 % idx == 0) && (number2 % idx == 0)
-  #   idx -= 1
-  # end
-  # nil
+  tester = number1
+  while tester >= 1
+    if number1 % tester == 0 && number2 % tester == 0
+      return tester
+    end
+    tester -= 1
+  end
 end
 
 # These are tests to check that your code is working. After writing

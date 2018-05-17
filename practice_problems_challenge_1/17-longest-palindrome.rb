@@ -17,32 +17,33 @@
 # Difficulty: hard.
 
 def palindrome?(string)
-  # i = 0
-  # while i < string.length
-  #   if string[i] != string[(string.length - 1) - i]
-  #     return false
-  #   end
-  #
-  #   i += 1
-  # end
-  #
-  # return true
+  i = 0
+  while i < string.length
+    if string[i] != string[(string.length - 1) - i]
+      return false
+    end
+
+    i += 1
+  end
+
+  return true
 end
 
 def longest_palindrome(string)
-  # answer = ""
-  # count = 0
-  # string.chars.each_with_index do |let,idx|
-  #   idx2 = idx + 1
-  #   while idx2 < string.length
-  #     if palindrome?(string[idx..idx2]) && (string[idx..idx2].length > count)
-  #       answer = string[idx..idx2]
-  #       count = string[idx..idx2].length
-  #     end
-  #     idx2 += 1
-  #   end
-  # end
-  # answer
+  answer = ""
+  count = 0
+  string.chars.each_with_index do |let, idx|
+    idx2 = idx + 1
+    while idx2 < string.length
+      subword = string[idx..idx2]
+      if palindrome?(subword) && subword.length > count
+        answer = subword
+        count = subword.length
+      end
+      idx2 += 1
+    end
+  end
+  p answer
 end
 
 # These are tests to check that your code is working. After writing

@@ -7,11 +7,9 @@
 # Difficulty: hard.
 
 def num_repeats(string)
-  # hash = Hash.new(0)
-  # string.each_char {|let| hash[let] += 1}
-  # count = 0
-  # hash.each {|x,y| count += 1 if y > 1}
-  # count
+  hash = Hash.new(0)
+  string.chars.each { |let| hash[let] += 1 }
+  hash.count { |x, y| y > 1 }
 end
 
 # These are tests to check that your code is working. After writing

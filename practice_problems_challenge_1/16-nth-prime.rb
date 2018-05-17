@@ -5,32 +5,32 @@
 
 # You may use our `is_prime?` solution.
 def is_prime?(number)
-  # if number <= 1
-  #   # only numbers > 1 can be prime.
-  #   return false
-  # end
-  #
-  # idx = 2
-  # while idx < number
-  #   if (number % idx) == 0
-  #     return false
-  #   end
-  #
-  #   idx += 1
-  # end
-  #
-  # return true
+  if number <= 1
+    # only numbers > 1 can be prime.
+    return false
+  end
+
+  idx = 2
+  while idx < number
+    if (number % idx) == 0
+      return false
+    end
+
+    idx += 1
+  end
+
+  return true
 end
 
 def nth_prime(n)
-  # count = 0
-  # answer = 0
-  # idx = 2
-  # until count == n
-  #   (count += 1) && (answer = idx) if is_prime?(idx)
-  #   idx += 1
-  # end
-  # p answer
+  count = 0
+  start = 2
+  while true
+    count += 1 if is_prime?(start)
+    return start if count == n
+    start += 1
+  end
+  start
 end
 
 # These are tests to check that your code is working. After writing

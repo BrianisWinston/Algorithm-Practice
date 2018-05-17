@@ -5,10 +5,10 @@
 # Difficulty: medium.
 
 def most_common_letter(string)
-  # hash = Hash.new(0)
-  # string.each_char {|let| hash[let] += 1}
-  # hash = hash.sort_by {|x,y| y}
-  # hash.last
+  hash = Hash.new(0)
+  string.chars.each { |alph| hash[alph] += 1 }
+  hash = hash.sort_by { |x, y| y }
+  [hash.last[0], hash.last[1]]
 end
 
 # These are tests to check that your code is working. After writing

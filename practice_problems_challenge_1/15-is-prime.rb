@@ -1,3 +1,4 @@
+require 'byebug'
 # Write a method that takes in an integer (greater than one) and
 # returns true if it is prime; otherwise return false.
 #
@@ -13,13 +14,12 @@
 # Difficulty: medium.
 
 def is_prime?(number)
-  # return true if number <= 3
-  # idx = 2
-  # while idx < number
-  #   return false if number % idx == 0
-  #   idx += 1
-  # end
-  # true
+  # debugger
+  return true if number <= 3
+  (2...number).to_a.each do |num|
+    return false if number % num == 0
+  end
+  true
 end
 
 # These are tests to check that your code is working. After writing

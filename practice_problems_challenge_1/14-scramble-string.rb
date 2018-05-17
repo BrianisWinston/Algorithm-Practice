@@ -5,11 +5,7 @@
 # Difficulty: medium.
 
 def scramble_string(string, positions)
-  # answer = ""
-  # string.each_char.with_index do |let,idx|
-  #   answer << string[positions[idx]]
-  # end
-  # answer
+  positions.map { |idx| string[idx] }.join
 end
 
 # These are tests to check that your code is working. After writing
