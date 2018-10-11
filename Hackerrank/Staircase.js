@@ -9,9 +9,11 @@ function staircase(n) {
         for(let i3=hashes;i3 >= 0;i3--) {
             stairs.push('#')
         }
-        if (stairs.includes('#')) {
+        // if (stairs.includes('#')) {
+            stairs.shift();
+            stairs.shift();
             console.log(stairs.join(''));
-        }
+        // }
         stairs = [];
     }
 }
