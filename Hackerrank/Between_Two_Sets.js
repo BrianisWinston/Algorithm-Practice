@@ -25,3 +25,18 @@ function getTotalX(a, b) {
     }
     return answer;
 }
+
+function factorials(begin, end) {
+    let facts = [];
+    for (let i = begin; i <= end; i++) {
+        if (end % i === 0) {
+            facts.push(i);
+        }
+    }
+    return facts;
+}
+
+
+let a = [2];
+let b = [20, 30, 12];
+console.log(getTotalX(a, b))
