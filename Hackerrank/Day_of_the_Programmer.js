@@ -1,6 +1,6 @@
 function dayOfProgrammer(year) {
     let answer = null;
-    if (year >= 1700 || year <= 1917) {
+    if (year >= 1700 && year <= 1917) {
         if (year % 4 === 0) {
             answer = `12.09.${year}`
         } else {
@@ -17,3 +17,5 @@ function dayOfProgrammer(year) {
     }
     return answer;
 }
+
+console.log(dayOfProgrammer(2100));
