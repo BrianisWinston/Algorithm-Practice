@@ -7,7 +7,7 @@ function dayOfProgrammer(year) {
             answer = `13.09.${year}`
         }
     }   else if (year === 1918) {
-        answer = `30.08.${year}`
+        answer = `26.09.${year}`
     }   else {
         if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
             answer = `12.09.${year}`
