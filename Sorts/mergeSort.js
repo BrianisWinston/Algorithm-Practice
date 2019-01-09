@@ -3,6 +3,9 @@
 
 
 Array.prototype.mergeSort = function(comparator) {
+  if (this.length <= 1) {
+    return this;
+  }
   let newArr = this.slice()
   if (comparator === undefined) {
     comparator = compA;
@@ -16,7 +19,7 @@ Array.prototype.mergeSort = function(comparator) {
 
 function merge(left, right, comparator) {
   let sorted = [];
-  console.log(`asdfsa ${right}`);
+  // console.log(`asdfsa ${right}`);
   while (left.length !== 0 && right.length !== 0) {
     if (comparator(left[0], right[0]) <= 0) {
       sorted.push(right.shift());
@@ -24,7 +27,7 @@ function merge(left, right, comparator) {
       sorted.push(left.shift());
     }
   }
-  return sorted;
+  return sorted.concat(left, right);
 }
 
 
