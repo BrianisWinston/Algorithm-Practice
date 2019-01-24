@@ -1,11 +1,9 @@
 const subset = (arr) => {
   if (arr.length === 0) return [[]];
 
-  let first = arr[0];
-  let sets = subset(arr.slice(1));
-
-  let newSubs = sets.map( el => [first].concat(el));
-  return sets.concat(newSubs);
+  let subs = subset(arr.slice(1, arr.length));
+  let newSubs = subs.map( el => [arr[0]].concat(el));
+  return subs.concat(newSubs);
 }
 
 // elegant solution------------
