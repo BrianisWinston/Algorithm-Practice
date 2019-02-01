@@ -1,8 +1,8 @@
 Array.prototype.mergeSort = function (cb) {
   if (this.length <= 1) return this;
 
-  if (cb === null) {
-    cb = compA;
+  if (cb instanceof Function === false) {
+    cb = compB;
   }
 
   let mid = Math.floor(this.length / 2);
@@ -10,6 +10,18 @@ Array.prototype.mergeSort = function (cb) {
   let right = this.slice(mid).mergeSort(cb);
 
   return merge(left, right, cb);
+}
+
+const merge = (left, right, cb) => {
+  let answer = [];
+  while (left.length !== 0 && right.length !== 0) {
+    if (cb(left[0], right[0]) <= 0) {
+      answer.push(right.shift());
+    } else {
+      answer.push(left.shift());
+    }
+  }
+  return answer.concat(left, right)
 }
 
 const compA = (x, y) => {
