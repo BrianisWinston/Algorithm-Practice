@@ -1,6 +1,6 @@
 const permutations = (arr) => {
   if (arr.length <= 1) return [arr];
-  debugger
+  // debugger
   let totalPerms = [];
   let first = [arr[0]]; // [1]
   let perms = permutations(arr.slice(1)); // [[2, 3], [3, 2]]
@@ -16,7 +16,6 @@ const permutations = (arr) => {
   // [1, 3, 2], [3, 1, 2], [3, 2, 1]]
 }
 
-console.log(permutations([1,2,3]));
- // === [
- //  [1, 2, 3], [2, 1, 3], [2, 3, 1],
- //  [1, 3, 2], [3, 1, 2], [3, 2, 1]] );
+console.log(permutations([1,2,3]) == [
+  [1, 2, 3], [2, 1, 3], [2, 3, 1],
+  [1, 3, 2], [3, 1, 2], [3, 2, 1]]);
