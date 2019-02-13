@@ -1,11 +1,14 @@
+require 'byebug'
+
 class Array
   def merge_sort(&prc)
     if self.length <= 1
-      return self
+      return [self]
     end
 
     prc ||= proc { |x, y| x <=> y }
     mid = self.length / 2
+    debugger
     left = self[0...mid].merge_sort(&prc)
     right = self[mid...self.length].merge_sort(&prc)
 
