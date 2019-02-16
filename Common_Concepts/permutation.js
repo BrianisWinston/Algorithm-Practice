@@ -1,5 +1,5 @@
 Array.prototype.permutations = function() {
-  if (this.length === 0) return [[]];
+  if (this.length === 1) return [this];
 
   let perms = this.slice(0, this.length - 1).permutations();
   let lastNum = [this[this.length - 1]];
@@ -9,7 +9,7 @@ Array.prototype.permutations = function() {
     for (let i = 0; i <= el.length; i++) {
       let firstHalf = el.slice(0, i);
       let secondHalf = el.slice(i);
-      totalPerms.push(firstHalf.concat(lastNum, secondHalf));
+      totalPerms.push(secondHalf.concat(lastNum, firstHalf));
     }
   })
 
