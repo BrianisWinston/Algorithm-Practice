@@ -1,11 +1,3 @@
-function subset(arr) {
-  if (arr.length === 0) return [[]];
-
-  let subs = subset(arr.slice(0, arr.length - 1));
-  let last = [arr[arr.length - 1]];
-  let newSubs = subs.map( el => el.concat(last));
-  return subs.concat(newSubs);
-};
 
 console.log(subset([1, 2, 3, 4]));
 
