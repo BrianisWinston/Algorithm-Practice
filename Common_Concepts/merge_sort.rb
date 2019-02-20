@@ -1,21 +1,20 @@
-require 'byebug'
-
 class Array
   def merge_sort(&prc)
-    return self if self.length == 1
-    # debugger
-    prc ||= proc { |x, y| x <=> y }
-    mid = self.length / 2
-    left = self[0...mid].merge_sort(&prc)
-    right = self[mid..-1].merge_sort(&prc)
+    return [self] if self.length == 1
 
-    self.merge(left, right, &prc)
+    prc ||= proc { |x, y| x <=> y }
+
+    mid = self.length / 2
+    left = self[0...mid].merge_sort
+    right = self[mid..-1].merge_sort
+
+    merge(left, right, &prc)
   end
 
-  def merge(l, r, &prc)
+  def merge(l, r, prc)
     answer = []
     while (l.length != 0 && r.length != 0)
-      if prc.call(l[0], r[0]) == -1
+      if (prc.call(l[0], r[0]) <= 0)
         answer << r.shift
       else
         answer << l.shift
@@ -23,10 +22,8 @@ class Array
     end
     answer.concat(l)
     answer.concat(r)
-    answer
   end
 end
-
 prc1 = Proc.new { |x, y| x <=> y }
 prc2 = Proc.new { |x, y| y <=> x }
 
