@@ -1,7 +1,9 @@
+require 'byebug'
+
 class Array
   def permutations
     return [self] if self.length == 1
-
+    # debugger
     perms = self[0..-2].permutations
     last = [self.last]
     total_perms = []
