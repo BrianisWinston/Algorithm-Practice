@@ -1,18 +1,19 @@
 require 'byebug'
 
-def my_bsearch(arr, num)
-  return nil if arr.length == 0
+class Array
+  def my_bsearch(num)
+    return nil if length == 0
 
-  mid = arr.length / 2
-  if arr[mid] == num
-    return mid
-  elsif arr[mid] > num
-    my_bsearch(arr[0...mid], num)
-  else
-    res = my_bsearch(arr[mid + 1..-1], num)
-    res.nil? ? nil : mid + 1 + res
+    mid = length / 2
+    if self[mid] == num
+      return mid
+    elsif self[mid] > num
+      self[0...mid].my_bsearch(num)
+    else
+      res = self[mid + 1..-1].my_bsearch(num)
+      res == nil ? nil : mid + 1 + res
+    end
   end
 end
 
-arr1 = [1, 3, 4, 5, 10, 11]
-p my_bsearch(arr1, 10)
+p [1, 3, 4, 5, 10, 11].my_bsearch(10)
