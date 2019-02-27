@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Array
     def permutations
       return [self] if self.length == 1
@@ -19,6 +21,7 @@ end
 
 class String
   def permutations
+    # debugger
     return [self] if length == 1
     letters = self.chars
 
@@ -38,5 +41,5 @@ class String
   end
 end
 
-p [1, 2, 3, 4].permutations
+# p [1, 2, 3, 4].permutations
 p "help".permutations

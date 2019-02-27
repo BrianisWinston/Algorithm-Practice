@@ -1,10 +1,15 @@
+require 'byebug'
+
 def subsets(arr)
-  return [[]] if arr.length == 0
+  # debugger
+  return [arr] if arr.length == 0
 
   subs = subsets(arr[0..-2])
-  last = [arr.last]
-  new_subs = subs.map { |sub| sub + last }
+  last_num = arr[-1]
 
-  new_subs.concat(subs)
+  new_subs = subs.map { |sub| sub + [last_num]}
+
+  subs.concat(new_subs)
 end
+
 p subsets([1, 2, 3, 4])
