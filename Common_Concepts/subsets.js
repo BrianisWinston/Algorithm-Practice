@@ -1,3 +1,12 @@
+function subset(arr) {
+  if (arr.length == 0) return [arr];
+
+  let subs = subset(arr.slice(1));
+  let firstNum = [arr[0]];
+  let newSubs = subs.map( sub => firstNum.concat(sub));
+
+  return subs.concat(newSubs);
+}
 
 console.log(subset([1, 2, 3, 4]));
 
