@@ -1,19 +1,5 @@
 // DYNAMIC PROGRAMMING-----------------------------------
 
-FIBSUMS = {
-  0: 0,
-  1: 1
-};
-
-const fibSums = (num) => {
-  if (FIBSUMS[num] !== undefined) {
-    return FIBSUMS[num];
-  } else {
-    FIBSUMS[num] = fibSums(num - 1) + fibSums(num - 2);
-  }
-  return fibSums(num - 1) + fibSums(num - 2);
-  return fibSums[num];
-};
 
 
 console.log(fibSums(0) == 0)
