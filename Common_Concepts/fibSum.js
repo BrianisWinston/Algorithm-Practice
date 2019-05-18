@@ -1,6 +1,34 @@
 // DYNAMIC PROGRAMMING-----------------------------------
 
+SOLUTIONS = {
+  0: 0,
+  1: 1
+};
 
+const fibSums = (num) => {
+  if (SOLUTIONS[num] !== undefined) {
+    return SOLUTIONS[num];
+  } else {
+    SOLUTIONS[num] = fibSums(num - 1) + fibSums(num - 2);
+  }
+  return fibSums(num - 1) + fibSums(num - 2);
+};
+
+
+// FIBSUMS = {
+//   0: 0,
+//   1: 1
+// };
+//
+// const fibSums = (num) => {
+//   if (FIBSUMS[num] !== undefined) {
+//     return FIBSUMS[num];
+//   } else {
+//     FIBSUMS[num] = fibSums(num - 1) + fibSums(num - 2);
+//   }
+//   return fibSums(num - 1) + fibSums(num - 2);
+//   return fibSums[num];
+// };
 
 console.log(fibSums(0) == 0)
 console.log(fibSums(1) == 1)
