@@ -12,15 +12,15 @@ require 'byebug'
 #   subs.concat(new_subs)
 # end
 
-def subsets(arr)
-  return [arr] if arr.length == 0
-
-  subs = subsets(arr[1..-1])
-  first_num = [arr[0]]
-
-  new_subs = subs.map { |sub| first_num + sub }
-
-  return subs.concat(new_subs)
-end
+# def subsets(arr)
+#   return [arr] if arr.length == 0
+#
+#   subs = subsets(arr[1..-1])
+#   first_num = [arr[0]]
+#
+#   new_subs = subs.map { |sub| first_num + sub }
+#
+#   return subs.concat(new_subs)
+# end
 
 p subsets([1, 2, 3, 4])
