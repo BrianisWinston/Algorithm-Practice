@@ -26,11 +26,12 @@ require 'byebug'
 def subsets(arr)
   return [arr] if arr.length == 0
 
-  subs = subsets(arr[1..-1])
-  first_sub = [arr.first]
+  subs = subsets(arr[0..-2])
+  first_sub = [arr.last]
 
-  new_subs = subs.map { |sub| first_sub + sub }
+  new_subs = subs.map { |sub| sub + first_sub }
 
   subs.concat(new_subs)
 end
+
 p subsets([1, 2, 3, 4])
