@@ -23,4 +23,14 @@ require 'byebug'
 #   return subs.concat(new_subs)
 # end
 
+def subsets(arr)
+  return [arr] if arr.length == 0
+
+  subs = subsets(arr[1..-1])
+  first_sub = [arr.first]
+
+  new_subs = subs.map { |sub| first_sub + sub }
+
+  subs.concat(new_subs)
+end
 p subsets([1, 2, 3, 4])
