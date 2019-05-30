@@ -42,7 +42,7 @@
 // };
 
 Array.prototype.mergeSort = function (cb) {
-  if (this.length == 1) return this;
+  if (this.length === 1) return this;
   if (typeof cb != 'function') cb = compA;
 
   let mid = Math.floor(this.length / 2);
@@ -54,6 +54,7 @@ Array.prototype.mergeSort = function (cb) {
 
 const merge = (l, r, cb) => {
   let answer = [];
+
   while (l.length != 0 && r.length != 0) {
     if (cb(l[0], r[0]) == -1) {
       answer.push(l.shift());
@@ -61,8 +62,9 @@ const merge = (l, r, cb) => {
       answer.push(r.shift());
     }
   }
+
   return answer.concat(l, r);
-};
+}
 
 const compA = (a, b) => {
   if (a > b) {
@@ -70,20 +72,20 @@ const compA = (a, b) => {
   } else if (a === b) {
     return 0;
   } else {
-    return 1
+    return 1;
   }
 };
 
 const compB = (a, b) => {
   if (a > b) {
     return 1;
-  } else if ( a === b) {
+  } else if (a === b) {
     return 0;
   } else {
     return -1;
-  };
+  }
 };
 
-console.log([1,9,2,3,0,5,6,43,24].mergeSort(compA)); // ONE WITH COMPARATOR
-console.log([1,9,2,3,0,5,6,43,24].mergeSort(compB)); // ONE WITH COMPARATOR
-console.log([1,9,2,3,0,5,6,43,24].mergeSort()); // ONE WITHOUT
+console.log(`[1,9,2,3,0,5,6,43,24].mergeSort(compA) === [ 43, 24, 9, 6, 5, 3, 2, 1, 0 ] ===> ${[1,9,2,3,0,5,6,43,24].mergeSort(compA)}`); // ONE WITH COMPARATOR
+console.log(`[1,9,2,3,0,5,6,43,24].mergeSort(compB) === [ 0, 1, 2, 3, 5, 6, 9, 24, 43 ] ===> ${[1,9,2,3,0,5,6,43,24].mergeSort(compB)}`); // ONE WITH COMPARATOR
+console.log(`[1,9,2,3,0,5,6,43,24].mergeSort() === [ 43, 24, 9, 6, 5, 3, 2, 1, 0 ] ===> ${[1,9,2,3,0,5,6,43,24].mergeSort()}`); // ONE WITHOUT
