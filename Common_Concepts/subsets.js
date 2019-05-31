@@ -8,6 +8,16 @@
 //   return subs.concat(newSubs);
 // }
 
+function subset(arr) {
+  if (arr.length == 0) return [arr];
+
+  let subsets = subset(arr.slice(0, arr.length - 1));
+  let lastNum = arr[arr.length - 1];
+
+  let newSubs = subsets.map( function (sub) { return sub.concat([lastNum]) } )
+  return subsets.concat(newSubs);
+};
+
 console.log(subset([1, 2, 3, 4]));
 
 // const subset = (arr) => {

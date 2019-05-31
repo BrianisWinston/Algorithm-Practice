@@ -24,13 +24,13 @@ require 'byebug'
 # end
 
 def subsets(arr)
-  return [arr] if arr.length == 1
+  return [arr] if arr.length == 0
 
   subset = subsets(arr[0..-2])
   last_num = arr.last
-
+  # debugger
   new_subs = subset.map { |sub| sub + [last_num] }
-  
+
   subset.concat(new_subs)
 end
 
