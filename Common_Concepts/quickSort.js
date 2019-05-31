@@ -1,21 +1,37 @@
+// Array.prototype.quickSort = function () {
+//   if (this.length < 2) {
+//     return this;
+//   }
+//   let pivot = this[0];
+//   let left = [];
+//   let right = [];
+//   for (var i = 1; i < this.length; i++) {
+//     if (this[i] < pivot) {
+//       left.push(this[i]);
+//     } else {
+//       right.push(this[i]);
+//     }
+//   }
+//
+//   return left.quickSort().concat(pivot, right.quickSort());
+// };
+
 Array.prototype.quickSort = function () {
-  if (this.length < 2) {
-    return this;
-  }
+  if (this.length < 2) return this;
+
   let pivot = this[0];
   let left = [];
   let right = [];
-  for (var i = 1; i < this.length; i++) {
+  for (i = 1; i < this.length; i++) {
     if (this[i] < pivot) {
       left.push(this[i]);
     } else {
       right.push(this[i]);
     }
-  }
+  };
 
   return left.quickSort().concat(pivot, right.quickSort());
-};
-
+}
 
 const equalOrNot = (arr) => {
   let answer = [ 1, 2, 3, 3, 4, 5, 7, 7, 8, 9 ];
