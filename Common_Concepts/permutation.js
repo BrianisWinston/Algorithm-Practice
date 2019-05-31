@@ -1,16 +1,17 @@
-Array.prototype.permutations = function() {
+Array.prototype.permutations = function () {
   if (this.length == 1) return [this];
 
   let perms = this.slice(0, this.length - 1).permutations();
-  let last = [this[this.length - 1]];
+  let lastNum = this[this.length - 1];
   let totalPerms = [];
-  for (let perm of perms) {
+
+  perms.forEach( perm => {
     for (let i = 0; i <= perm.length; i++) {
-      firstHalf = perm.slice(0, i);
-      secondHalf = perm.slice(i);
-      totalPerms.push(firstHalf.concat(last, secondHalf));
-    };
-  };
+      let firstHalf = perm.slice(0, i);
+      let secondHalf = perm.slice(i);
+      totalPerms.push(firstHalf.concat([lastNum], secondHalf));
+    }
+  })
   return totalPerms;
 };
 
