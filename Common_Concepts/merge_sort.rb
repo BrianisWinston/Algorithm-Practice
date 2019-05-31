@@ -24,9 +24,10 @@
 #     answer.concat(r)
 #   end
 # end
+
 class Array
   def merge_sort(&prc)
-    return self if self.length == 1
+    return self if self.length <= 1
     prc ||= proc { |x, y| x <=> y }
 
     mid = self.length / 2
@@ -39,7 +40,7 @@ class Array
   def merge(l, r, &prc)
     answer = []
     while l.length != 0 && r.length != 0
-      if prc.call(l[0], r[0]) <= 0
+      if prc.call(l[0], r[0]) == -1
         answer << r.shift
       else
         answer << l.shift
@@ -50,8 +51,8 @@ class Array
     answer.concat(r)
   end
 end
-prc1 = Proc.new { |x, y| x <=> y }
-prc2 = Proc.new { |x, y| y <=> x }
+prc1 = proc { |x, y| x <=> y }
+prc2 = proc { |x, y| y <=> x }
 
 p [100, 101, 59, 70, 0, 98].merge_sort
 puts "[1, 2, 3, 4, 5].merge_sort(&prc1) === [5, 4, 3, 2, 1] ==> #{[1, 2, 3, 4, 5].merge_sort(&prc1) === [5, 4, 3, 2, 1]}"
