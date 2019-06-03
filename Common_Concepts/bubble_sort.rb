@@ -34,7 +34,6 @@ class Array
           sorted = false
         end
       end
-      sorted
     end
     self
   end
@@ -42,3 +41,4 @@ end
 
 p [1, 2, 3, 4, 5, 6, 7].bubble_sort
 p [1, 2, 3, 4, 5, 6, 7].bubble_sort { |x, y| y <=> x }
+p [7, 1, 8, 3, 0, 1].bubble_sort { |x, y| x <=> y }
