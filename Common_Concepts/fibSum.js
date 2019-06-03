@@ -1,17 +1,5 @@
 // DYNAMIC PROGRAMMING-----------------------------------
 
-const SOLUTIONS = {
-  0: 0,
-  1: 1
-};
-
-const fibSums = (num) => {
-  if (SOLUTIONS[num] != undefined) {
-    return SOLUTIONS[num];
-  } else {
-    return SOLUTIONS[num] = fibSums(num - 1) + fibSums(num - 2);
-  };
-};
 
 
 // FIBSUMS = {
