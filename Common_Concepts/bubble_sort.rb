@@ -21,23 +21,7 @@ require 'byebug'
 #   end
 # end
 
-class Array
-  def bubble_sort(&prc)
-    prc ||= proc { |x, y| x <=> y }
 
-    sorted = false
-    while sorted == false
-      sorted = true
-      (0..self.length - 2).each do |id|
-        if prc.call(self[id], self[id + 1]) == -1
-          self[id], self[id + 1] = self[id + 1], self[id]
-          sorted = false
-        end
-      end
-    end
-    self
-  end
-end
 
 p [1, 2, 3, 4, 5, 6, 7].bubble_sort
 p [1, 2, 3, 4, 5, 6, 7].bubble_sort { |x, y| y <=> x }
