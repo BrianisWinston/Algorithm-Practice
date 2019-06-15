@@ -1,15 +1,15 @@
 Array.prototype.bubbleSort = function (cb) {
   if (typeof cb != 'function') cb = compA;
+
   let sorted = false;
   while (sorted == false) {
     sorted = true;
-    for (let i = 0; i < this.length - 1; i++) {
-      if (cb(this[i], this[i + 1]) == -1) {
-        [this[i], this[i + 1]] = [this[i + 1], this[i]];
+    for(let i = 0; i < this.length - 2; i++) {
+      if (cb(this[i], this[i + 1]) >= 0) {
+        [this[i], this[i + 1] = this[i + 1], this[i]];
         sorted = false;
       };
     };
-    sorted;
   };
   return this;
 };
